@@ -90,10 +90,10 @@ class Appointment(models.Model):
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     dentist = models.ForeignKey(Dentist, on_delete=models.CASCADE)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
         patient = self.patient
         patient_name = f"{patient.first_name} {patient.last_name}"
-        date = f"{self.date.date()} | {self.date.strftime('%H:%M')}"
+        #date = f"{self.date.date()} | {self.date.strftime('%H:%M')}"
         return f"{date}: {self.appointment_reason} -> {patient_name}"

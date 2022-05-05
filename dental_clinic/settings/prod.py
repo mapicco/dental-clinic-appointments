@@ -7,7 +7,7 @@ from .base import BASE_DIR, MIDDLEWARE, DATABASES
 
 # DEBUG = False
 
-ALLOWED_HOSTS = ['manejo-clinica-odontologica.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
